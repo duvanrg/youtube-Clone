@@ -7,6 +7,8 @@
     justify-content: space-between;
     flex-wrap: wrap;
     width: 100%;
+    overflow-y: scroll;
+    padding: 15px 5vw;
 }
 
 .play-video{
@@ -38,10 +40,24 @@
     text-decoration: none;
 }
 
-.side-video-list .samll-thumbnail{
+.side-video-list .small-thumbnail{
     flex-basis: 49%;
 }
 
 .side-video-list .vid-info{
     flex-basis: 49%;
+}
+
+.play-video.tags {
+    color: #0000ff;
+    font-size: 13px;
+}
+
+.play-video h3 {
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.play-video i {
+    color: #131333;
 }
