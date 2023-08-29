@@ -27,6 +27,7 @@ i {
 p,
 a {
     font-size: 0.9rem;
+    text-decoration: none;
 }
 
 hr {
@@ -78,7 +79,7 @@ hr {
     width: 50px;
 }
 
-img {
+.image {
     position: absolute;
     top: 0;
     left: 0;
@@ -175,7 +176,7 @@ img {
     display: flex;
     position: fixed;
     width: 100%;
-    height: calc(100v - 60px);
+    height: calc(100vh - 60px);
     top: 60px;
 }
 
@@ -189,7 +190,6 @@ img {
 .sidebar a {
     text-decoration: none;
     color: #fff;
-
 }
 
 .sidebar-items {
