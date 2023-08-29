@@ -211,10 +211,19 @@ img {
     margin-right: 24px;
 }
 
+.small-sidebar {
+    width: 5%;
+    overflow-x: hidden;
+}
+
+.small-sidebar .more{
+    display: none;
+}
+
 /*items Content Start*/
 
 .content {
-    width: calc(100vw - 240px);
+    width: 100%;
 }
 
 .chips-wrapper {
