@@ -31,6 +31,7 @@ a {
 
 hr {
     border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 10px;
 }
 
 /*scrollbar style*/
@@ -173,7 +174,8 @@ img {
 .body-container {
     display: flex;
     position: fixed;
-    height: calc(100vh - 60px);
+    width: 100%;
+    height: calc(100v - 60px);
     top: 60px;
 }
 
@@ -258,7 +260,7 @@ img {
 
 .video-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
     grid-gap: 18px;
     padding: 18px;
     background-color: #181818;
@@ -268,23 +270,10 @@ img {
 
 .video-content-cover {
     position: relative;
+    height: 100%;
+    width: 100%;
     transition: .5s;
     transition-delay: .05s;
-}
-
-.video-content-cover:hover {
-    transform: translatey(10px);
-    z-index: 999;
-}
-
-.video-content-cover:nth-child(4n+1):hover {
-    transform: translate(10px, 10px);
-    z-index: 999;
-}
-
-.video-content-cover:nth-child(4n+4):hover {
-    transform: translate(-10px, 10px);
-    z-index: 999;
 }
 
 .video-content {
@@ -295,7 +284,7 @@ img {
 }
 
 .video-content:hover {
-    transform: scale(1.1);
+    transform: scale(1.01);
     z-index: 5;
     position: absolute;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
@@ -370,27 +359,39 @@ img {
     padding: 5px 10px;
 }
 
-.video-content-cover:hover .hidden-content {
-    display: block;
+.video-content-cover .video-btn{
+    display: none;
 }
 
-.btn {
-    padding: 5px 0;
-    color: #aaa;
-    text-transform: uppercase;
-    width: 100%;
+.video-content-cover:hover :nth-child(2n+1).video-btn{
+    position: absolute;
+    right: 5px;
+    top: 3px;
+    display: flex;
+}
+
+.video-content-cover:hover :nth-child(2n+2).video-btn{
+    position: absolute;
+    right: 5px;
+    top: 30px;
+    display: flex;
+}
+
+
+.video-btn {
+    object-fit: cover;
+    padding: 5px;
+    border-radius: 25%;
     background-color: #373737;
     text-align: center;
     margin: 5px 0;
-    font-size: .6rem;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.btn i {
+.video-btn i {
     font-size: .7rem;
-    margin-right: 5px;
     color: #aaa;
 }
 
@@ -399,7 +400,6 @@ img {
 @media (max-width: 1200px) {
     .sidebar {
         width: 70px;
-        overflow-x: hidden;
     }
 
     .more {
