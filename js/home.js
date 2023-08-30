@@ -46,7 +46,6 @@ let ChannelData = async () => {
         `).join(" ")}
     `)
 
-    //  
 }
 
 ChannelData();

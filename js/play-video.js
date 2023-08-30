@@ -1,5 +1,15 @@
 const urlParams = new URLSearchParams(window.location.search);
 const videoId = urlParams.get("URL");
+let resDataVideo = null;
+
+const url = `https://youtube138.p.rapidapi.com/video/details/?id=${videoId}&hl=en&gl=US`;
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '04d10ecdc5msh4b532459d726b25p18321djsn81474e7848e5',
+		'X-RapidAPI-Host': 'youtube138.p.rapidapi.com'
+	}
+};
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -10,12 +20,21 @@ function shuffleArray(array) {
 }
 
 let insertData = async (data) => {
-    let reqChannel = await fetch(`../data/channel-details.json`);
-    let resCh = await reqChannel.json();
-    let reqVideos = await fetch(`../data/videos.json`);
-    let resV = await reqVideos.json();
+    try {
+		const response = await fetch(url, options);
+		resDataVideo = await response.json();
+        console.log(resDataVideo);
 
-    const info = resV.contents.find(item => item.video.videoId === data);
+	} catch (error) {
+        console.error(error);
+	}
+    
+    let reqChannel = await fetch(`../data/channel-details.json`);
+    let resChannel = await reqChannel.json();
+    let reqVideos = await fetch(`../data/videos.json`);
+    let resVideos = await reqVideos.json();
+
+    const info = resVideos.contents.find(item => item.video.videoId === data);
 
     if (data) {
         const selection = document.querySelector("#content-video");
@@ -31,9 +50,9 @@ let insertData = async (data) => {
             </div>
             <h3>${info.video.title}</h3>
             <div class="play-video-info">
-                <p>${info.video.stats.views} Views - ${info.video.publishedTimeText}</p>
+                <p>${resDataVideo.stats.views} Views - ${info.video.publishedTimeText}</p>
                 <div>
-                    <a href="#"><i class="ri-thumb-up-line">13k</i></a>
+                    <a href="#"><i class="ri-thumb-up-line">${resDataVideo.stats.likes}</i></a>
                     <a href="#"><i class="ri-thumb-down-line"></i></a>
                     <a href="#"><i class="ri-share-forward-fill">Share</i></a>
                     <a href="#"><i class="ri-download-line">Download</i></a>
@@ -45,17 +64,16 @@ let insertData = async (data) => {
             </div>
             <hr>
             <div class="publisher">
-                <img src="${resCh.avatar[0].url}" alt="">
+                <img src="${resChannel.avatar[0].url}" alt="">
                 <div>
-                    <p>${resCh.title}</p>
-                    <span>${resCh.stats.subscribersText}</span>
+                    <p>${resChannel.title}</p>
+                    <span>${resChannel.stats.subscribersText}</span>
                 </div>
                 <button type="button">Subscribe</button>
             </div>
             <div class="vid-description">
-                <p>Channel for trainer Jholver </p>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat voluptate similique error,
-                    voluptatibus doloribus sapiente.</p>
+                <p>${resDataVideo.description}</p>
+                <p>${resDataVideo.category}</p>
                 <hr>
                 <h4> 134 comments</h4>
                 <div class="add-comment">
