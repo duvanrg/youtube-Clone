@@ -125,5 +125,12 @@ let insertVideos = async () => {
     `)
 }
 
+var hiddenMenuIcon = document.querySelector("#hidden-menu-icon");
+var hiddenSidebar = document.querySelector("#hiddenSidebar");
+
+hiddenMenuIcon.onclick = function(){
+    hiddenSidebar.classList.toggle("hiddenBar")
+}
+
 insertData(videoId);
 insertVideos();
