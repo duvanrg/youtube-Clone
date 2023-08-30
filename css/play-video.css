@@ -3,7 +3,7 @@
 }
 
 
-.play-container{
+.play-container {
     padding-right: 2%;
 }
 
@@ -14,6 +14,7 @@
     width: 100%;
     overflow-y: scroll;
     padding: 15px 2vw;
+    background-color: #181818;
 }
 
 .play-video {
@@ -24,8 +25,9 @@
     flex-basis: 30%;
 }
 
-.play-video video {
+.play-video .video iframe {
     width: 100%;
+    height: 500px;
 }
 
 .side-video-list {
@@ -41,7 +43,7 @@
 
 .side-video-list a {
     font-weight: bold;
-    color: #131313;
+    color: #fff;
     text-decoration: none;
     margin-bottom: 5px;
 }
@@ -49,6 +51,7 @@
 
 .side-video-list p {
     margin-top: 5px;
+    color: #fff;
 }
 
 .side-video-list .small-thumbnail {
@@ -65,6 +68,7 @@
 }
 
 .play-video h3 {
+    color: #fff;
     font-weight: 600;
     font-size: 22px;
 }
@@ -76,13 +80,13 @@
     flex-wrap: wrap;
     margin-top: 10px;
     font-size: 14px;
-    color: #5a5a5a;
+    color: #fff;
 }
 
 .play-video .play-video-info a i {
     width: 20px;
     margin-right: 8px;
-    color: #5a5a5a;
+    color: #fff;
 }
 
 .play-video .play-video-info a {
@@ -95,7 +99,7 @@
 .play-video hr {
     border: 0;
     height: 1px;
-    background: #ccc;
+    color: #fff;
     margin: 10px 0;
 }
 
@@ -118,14 +122,14 @@
 }
 
 .publisher div p {
-    color: #000;
+    color: #fff;
     font-weight: 600;
     font-size: 18px;
 }
 
 .publisher div span {
     font-size: 13px;
-    color: #5a5a5a;
+    color: #fff;
 }
 
 .publisher button {
@@ -146,12 +150,12 @@
 .vid-description p {
     font-size: 14px;
     margin-bottom: 5px;
-    color: #5a5a5a;
+    color: #fff;
 }
 
 .vid-description h4 {
+    color: #fff;
     font-size: 14px;
-    color: #5a5a5a;
     margin-top: 15px;
 }
 
@@ -194,7 +198,7 @@
 
 .old-comment h3 span {
     font-size: 12px;
-    color: #5a5a5a;
+    color: #fff;
     font-weight: 500;
     margin-left: 8px;
 }
@@ -214,27 +218,27 @@
 
 .old-comment .acomment-action span {
     margin-right: 20px;
-    color: #5a5a5a;
+    color: #fff;
 }
 
-.old-comment .acomment-action a{
+.old-comment .acomment-action a {
     color: #0000ff;
 }
- 
-@media (max-width:900px){
-    .play-video{
+
+@media (max-width:900px) {
+    .play-video {
         flex-basis: 100%;
     }
 
-    .right-sidebar{
+    .right-sidebar {
         flex-basis: 100%;
     }
 
-    .play-container{
+    .play-container {
         padding-left: 5%;
     }
 
-    .vid-description{
+    .vid-description {
         padding-left: 0;
     }
 
