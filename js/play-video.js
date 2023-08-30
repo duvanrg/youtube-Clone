@@ -6,7 +6,7 @@ const url = `https://youtube138.p.rapidapi.com/video/details/?id=${videoId}&hl=e
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': '04d10ecdc5msh4b532459d726b25p18321djsn81474e7848e5',
+		'X-RapidAPI-Key': '6550335bc7mshadb2927e28bab3dp1f1939jsn8cb7fac44a6e',
 		'X-RapidAPI-Host': 'youtube138.p.rapidapi.com'
 	}
 };
