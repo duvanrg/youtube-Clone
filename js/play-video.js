@@ -118,7 +118,7 @@ let insertVideos = async () => {
             <div class="vid-info">
                 <a href="#">${value.video.title}</a>
                 <p>${resCh.title}</p>
-                <p>${value.video.stats.views}</p>
+                <p>${value.video.stats.views} views - ${value.video.publishedTimeText}</p>
             </div>
         </div>
         `).join(" ")}

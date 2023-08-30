@@ -35,7 +35,8 @@
 
 .play-video .video iframe {
     width: 100%;
-    height: 500px;
+    height: 72vh;
+
 }
 
 .side-video-list {
