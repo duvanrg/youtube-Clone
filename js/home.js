@@ -23,7 +23,7 @@ let ChannelData = async () => {
     ${resV.contents.map((value) => /*html*/ `
         <div class="video-content-cover">
             <div class="video-content">
-                <a href="" class="video-box">
+                <a href="play-video.html?URL=${value.video.videoId}" class="video-box">
                     <img class="image" src="${value.video.thumbnails[0].url}" alt="">
                     <div class="video-btn"><i class="ri-time-line"></i></div>
                     <div class="video-btn"><i class="ri-play-list-2-line"></i></div>
