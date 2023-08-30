@@ -5,7 +5,8 @@
 
 .play-container {
     padding-right: 2%;
-}
+    background-color: #181818;
+    }
 
 .row {
     display: flex;
@@ -172,9 +173,11 @@
 }
 
 .add-comment input {
+    background-color: #181818;
+    color: #fff;
     border: 0;
     outline: 0;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #aaa;
     width: 100%;
     padding-top: 10px;
 }
